@@ -1,0 +1,51 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.tensorflow.lite.examples.classification">
+
+    <uses-sdk />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- progetto: autorizzazioni necessarie per implementare client MQTT -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Progetto Mobile Systems"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.ImageClassification">
+
+        <meta-data
+            android:name="BROKER_ADDRESS"
+            android:value="localhost" />
+        <meta-data
+            android:name="BROKER_PORT"
+            android:value="1883" />
+
+        <activity
+            android:name="org.tensorflow.lite.examples.classification.mqtt.MainActivity"
+            android:label="Progetto di Mobile Systems M"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- progetto: per implementare client MQTT -->
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
+
+    </application>
+</manifest>
