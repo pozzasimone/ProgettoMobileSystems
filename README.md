@@ -1,4 +1,4 @@
-# Integrazione di TensorFlow Lite con dispositivi MQTT virtuali
+# Integrazione di TensorFlow Lite con dispositivi MQTT virtuali in Android
 
 Questo progetto consiste in un’applicazione Android che prevede:
 
@@ -10,8 +10,6 @@ Questo progetto consiste in un’applicazione Android che prevede:
 
 Per la parte di acquisizione e classificazione delle immagini, quest’applicazione si basa sull’[esempio per classificazione](https://github.com/tensorflow/examples/tree/master/lite/examples/image_classification/android) presente nel repository ufficiale di TensorFlow Lite.
 
-Il broker è realizzato facendo uso della libreria [Moquette per Android](https://github.com/technocreatives/moquette).
-
-I client MQTT sono invece realizzati sfruttando la libreria open-source [Eclipse Paho](https://github.com/eclipse/paho.mqtt.android).
+Il broker è realizzato facendo uso della libreria [Moquette per Android](https://github.com/technocreatives/moquette). I client MQTT sono invece realizzati sfruttando la libreria open-source [Eclipse Paho](https://github.com/eclipse/paho.mqtt.android).
 
 Le mie classi sono relegate al package org.tensorflow.lite.examples.classification.mqtt e il relativo codice è descritto in dettaglio nel file report.pdf.
